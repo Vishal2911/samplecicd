@@ -1,0 +1,14 @@
+# Create a user
+curl -X POST -H "Content-Type: application/json" -d '{"name":"John Doe","email":"john@example.com"}' http://localhost:8080/users
+
+# Get all users
+curl http://localhost:8080/users
+
+# Get user with ID 1
+curl http://localhost:8080/users/1
+
+# Update user with ID 1
+curl -X PUT -H "Content-Type: application/json" -d '{"name":"John Updated","email":"john.updated@example.com"}' http://localhost:8080/users/1
+
+# Delete user with ID 1
+curl -X DELETE http://localhost:8080/users/1
