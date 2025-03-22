@@ -147,3 +147,7 @@ func deleteUser(w http.ResponseWriter, r *http.Request) {
 	}
 	http.Error(w, "User not found", http.StatusNotFound)
 }
+
+
+// docker tag local-image:tagname new-repo:tagname
+// docker push new-repo:tagname

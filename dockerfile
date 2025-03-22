@@ -5,10 +5,11 @@ FROM golang:1.21-alpine as builder
 WORKDIR /app
 
 # Copy go.mod and go.sum files first (for better caching)
-COPY go.mod ./
+# COPY go.mod ./
 # If you had a go.sum file, you'd copy it too: COPY go.sum ./
 
 # Download dependencies
+RUN go mod init v0
 RUN go mod download
 
 # Copy the entire source code
@@ -22,7 +23,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 FROM alpine:latest
 
 # Add some basic metadata
-LABEL maintainer="Your Name <your.email@example.com>"
+LABEL maintainer="Your Name  vishalsingh007@gmail.com"
 LABEL version="1.0"
 LABEL description="Simple CRUD API in Golang"
 
