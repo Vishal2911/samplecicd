@@ -21,5 +21,7 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Build the Docker image
       run: docker build -t samplecicd . 
+    - name: Tag the Docker image
+      run: docker tag samplecicd codingconcepts53/samplecicd:latest
     - name: Push to dockerhub
       run: docker push codingconcepts53/samplecicd:latest
