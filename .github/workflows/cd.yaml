@@ -18,5 +18,5 @@ jobs:
     - name: Delete Old Container
       run: sudo docker rm -f samplecicd || true
     - name: Run the Docker image
-      run: sudo docker run -d -p 8080:80 80 --name samplecicd codingconcepts53/samplecicd:latest
+      run: sudo docker run -d -p 8080:8080 --name samplecicd codingconcepts53/samplecicd:latest
 
