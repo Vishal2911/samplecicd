@@ -13,7 +13,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - uses: Pull Docker Image
+    - name: Pull Docker Image
       run: sudo docker pull codingconcepts53/samplecicd:latest
     - name: Delete Old Container
       run: sudo docker rm -f samplecicd || true
